@@ -1,0 +1,3 @@
+src/server/Setup.js
+/build/*/Setup.js
+/build/*/gapps.config.json
