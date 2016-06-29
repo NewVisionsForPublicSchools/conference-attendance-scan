@@ -13,12 +13,19 @@
 			<img src="https://www.googledrive.com/host/0B-y5PxJT5zp1b0EwZHo0SkU0ZmM/NVCHS_Logo_Small.png" alt="NVCHS Logo">
 			<br><br><br>
 			<div class="col-md-6 col-md-offset-3 jumbotron">
-				<form name="myForm">
+				<form name="myForm" ng-submit="ctrl.processScan()">
 					<div class="form-group">
 						<label class="form-label">Attendee Scan</label>
-						<input class="form-control" type="text" ng-model="ctrl.attendee">
+						<input class="form-control" type="text" ng-model="ctrl.attendee.id">
 					</div>
+					<!-- <input type="submit"> -->
 				</form>
+			</div>
+			<br><br><br>
+			<div class="col-md-6 col-md-offset-3 text-center attendee-display" ng-if="ctrl.myAttendee">
+				<h3>Welcome</h3>
+				<h4 ng-bind="ctrl.myAttendee"></h4>
+				<h5>You have been successfully checked in!</h5>
 			</div>
 			<br><br><br><br><br><br><br><br>
 			<pre class="pre-scrollable">{{ctrl | json}}</pre>
