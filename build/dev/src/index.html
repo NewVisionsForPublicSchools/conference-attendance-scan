@@ -9,8 +9,18 @@
 
 	<body ng-controller="SharedController as ctrl">
 		<div class="container">
-			<h1>Hello World</h1>
-			<br><br><br><br>
+			<br><br><br>
+			<img src="https://www.googledrive.com/host/0B-y5PxJT5zp1b0EwZHo0SkU0ZmM/NVCHS_Logo_Small.png" alt="NVCHS Logo">
+			<br><br><br>
+			<div class="col-md-6 col-md-offset-3 jumbotron">
+				<form name="myForm">
+					<div class="form-group">
+						<label class="form-label">Attendee Scan</label>
+						<input class="form-control" type="text" ng-model="ctrl.attendee">
+					</div>
+				</form>
+			</div>
+			<br><br><br><br><br><br><br><br>
 			<pre class="pre-scrollable">{{ctrl | json}}</pre>
 			<br><br><br><br>
 		</div>
