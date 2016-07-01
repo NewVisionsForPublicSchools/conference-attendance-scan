@@ -5,8 +5,14 @@ angular.module('MyApp', [])
 	self.attendee = {};
 
 	self.processScan = function(){
-		self.myAttendee = self.attendee.id;
-		self.attendee = {};
+		google.script.run.withSuccessHandler(function(response){
+			var myResponse = JSON.parse(response);
+			self.myAttendee = myResponse.employeeName;
+			self.attendee = {};
+			$scope.$apply();
+		}).withFailureHandler(function(response){
+			$scope.$apply();
+		}).addScanToLog(self.attendee.id);
 	};
 	
 })

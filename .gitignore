@@ -1,3 +1,5 @@
 src/server/Setup.js
 /build/*/src/Setup.js
+src/server/Ignore.js
+/build/*/src/Ignore.js
 /build/*/gapps.config.json

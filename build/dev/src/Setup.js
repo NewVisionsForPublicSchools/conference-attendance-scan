@@ -29,3 +29,17 @@ function addHeadersToAttendeeList(){
 	.setFontWeight('bold');
 	sheet.setFrozenRows(1);
 }
+
+
+
+function createScanSheet(){
+	var test, ss, sheet, headers, range;
+
+	ss = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty('scanSs'));
+	sheet = ss.insertSheet('Scans');
+	headers = ['Employee ID', 'Employee Name', 'Timestamp'];
+	range = sheet.getRange(1,1,1,headers.length);
+	range.setValues([headers]).setBackground('black').setFontColor('white').setFontWeight('bold');
+	sheet.setFrozenRows(1);
+	sheet.setColumnWidth(2,140);
+}

@@ -26,5 +26,25 @@ function getNewHires(){
 
 	barcodeRange = scanSheet.getRange('G:G');
 	barcodeRange.setHorizontalAlignment('center').setVerticalAlignment('center');
-	debugger;
+}
+
+
+
+function addScanToLog(id){
+	var test, scanSheet, attendeeList, attendee, scan, headerRange;
+
+	scanSheet = SCANSS.getSheetByName('Scans');
+	attendeeList = NVSL.getRowsData(SCANSS.getSheetByName('Attendee List'));
+	attendee = attendeeList.filter(function(e){
+		return e.employeeId == id;
+	})[0];
+	scan = {
+		employeeId: attendee.employeeId,
+		employeeName: attendee.employeeName,
+		timestamp: new Date()
+	};
+	headerRange = scanSheet.getRange(1,1,1,scanSheet.getLastColumn());
+	NVSL.setRowsData(scanSheet, [scan], headerRange, scanSheet.getLastRow()+1);
+
+	return JSON.stringify(attendee);
 }

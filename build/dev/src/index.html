@@ -16,7 +16,7 @@
 				<form name="myForm" ng-submit="ctrl.processScan()">
 					<div class="form-group">
 						<label class="form-label">Attendee Scan</label>
-						<input class="form-control" type="text" ng-model="ctrl.attendee.id">
+						<input class="form-control" type="text" ng-model="ctrl.attendee.id" autofocus>
 					</div>
 					<!-- <input type="submit"> -->
 				</form>
@@ -28,7 +28,7 @@
 				<h4>You have been successfully checked in!</h4>
 			</div>
 			<br><br><br><br><br><br><br><br>
-			<pre class="pre-scrollable">{{ctrl | json}}</pre>
+			<!-- <pre class="pre-scrollable">{{ctrl | json}}</pre> -->
 			<br><br><br><br>
 		</div>
 	</body>
