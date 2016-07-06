@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+	<head>
+		<base target="_top">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<?!= include('style.css'); ?>
+	</head>
+
+	<body ng-controller="SharedController as ctrl">
+		<div class="container">
+			<br><br><br>
+			<img src="https://www.googledrive.com/host/0B-y5PxJT5zp1b0EwZHo0SkU0ZmM/NVCHS_Logo_Small.png" alt="NVCHS Logo">
+			<br><br><br>
+			<div class="col-md-6 col-md-offset-3 jumbotron">
+				<form name="myForm" ng-submit="ctrl.processScan()">
+					<div class="form-group">
+						<label class="form-label">Attendee Scan</label>
+						<input class="form-control" type="text" ng-model="ctrl.attendee.id" autofocus>
+					</div>
+					<!-- <input type="submit"> -->
+				</form>
+			</div>
+			<br><br><br>
+			<div class="col-md-6 col-md-offset-3 text-center attendee-display" ng-if="ctrl.myAttendee">
+				<h2>Welcome</h2>
+				<h3 ng-bind="ctrl.myAttendee"></h3>
+				<h4>You have been successfully checked in!</h4>
+			</div>
+			<br><br><br><br><br><br><br><br>
+			<!-- <pre class="pre-scrollable">{{ctrl | json}}</pre> -->
+			<br><br><br><br>
+		</div>
+	</body>
+
+	<script>
+		<?!= include('shared.controller.client.js'); ?>
+	</script>
+</html> 
