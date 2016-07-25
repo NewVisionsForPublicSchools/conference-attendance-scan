@@ -8,6 +8,7 @@ function Hire(record){
 	this.title = record.jobTitle;
 	this.startDate = record.startDate;
 	this.email = record.workEmail;
+	this.employeeId = record.positionId;
 	return this;
 }
 
@@ -15,7 +16,7 @@ function Hire(record){
 
 Hire.prototype.getBarcode = function() {
 	var url = '"https://www.barcodesinc.com/generator/image.php?code=' + encodeURI(this.employeeId) + '&style=452&type=C128B&width=500&height=100&xres=1&font=5"';
-	this.barcode = '=image(' + url + ', 3)';
+	this.barcode = this.employeeId ? '=image(' + url + ', 3)' : '';
 	return this.barcode;
 };
 

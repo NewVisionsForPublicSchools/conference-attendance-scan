@@ -12,7 +12,7 @@ function getNewHires(){
 	});
 	idStub = 100001;
 	myNewHires.forEach(function(e){
-		e.getTempId(idStub);
+		// e.getTempId(idStub);
 		e.getBarcode();
 		idStub++;
 	});
