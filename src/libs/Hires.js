@@ -8,7 +8,7 @@ function Hire(record){
 	this.title = record.jobTitle;
 	this.startDate = record.startDate;
 	this.email = record.workEmail;
-	this.employeeId = record.positionId;
+	// this.employeeId = record.positionId;
 	return this;
 }
 
@@ -23,6 +23,6 @@ Hire.prototype.getBarcode = function() {
 
 
 Hire.prototype.getTempId = function(stub) {
-	this.employeeId = 'TBD' + stub;
+	this.employeeId = 'NVCHS' + stub;
 	return this.employeeId;
 };

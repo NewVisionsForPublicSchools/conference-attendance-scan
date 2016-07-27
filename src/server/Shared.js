@@ -6,13 +6,13 @@ var SCANSS = SpreadsheetApp.openById(PropertiesService.getScriptProperties().get
 function getNewHires(){
 	var test, hires, myNewHires, idStub;
 
-	hires = NVSL.getRowsData(NEWHIRES.getSheetByName('New Hires_Transfers'));
+	hires = NVSL.getRowsData(NEWHIRES.getSheetByName('Onboarding Attendance'));
 	myNewHires = hires.map(function(e){
 		return new Hire(e);
 	});
-	idStub = 100001;
+	idStub = 1001;
 	myNewHires.forEach(function(e){
-		// e.getTempId(idStub);
+		e.getTempId(idStub);
 		e.getBarcode();
 		idStub++;
 	});
